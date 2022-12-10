@@ -62,17 +62,15 @@ for (int i = 1; i < 10; i++)
 bool PalindromTest(int num)
 {
     bool result = false;
-    int firstPartNumber = 0;
-    int secondPartNumber = 0;
+    // int firstPartNumber = 0;
+   // int secondPartNumber = 0;
     if (num > 9999 && num < 100000)
     {
-        firstPartNumber = num / 1000;
-        secondPartNumber = num % 100;
-        num = firstPartNumber * 100 + secondPartNumber;
-        for (int i=0; i<FourDigitPalind.Count; i++)
-        {            
-            if (FourDigitPalind.ContainsValue(num)) result=true;
-        }
+        // firstPartNumber = num / 1000;
+        // secondPartNumber = num % 100;
+        // num = (num / 1000) * 100 + num % 100;
+        if (FourDigitPalind.ContainsValue((num / 1000) * 100 + num % 100)) result=true;
+        
     }
     else Console.WriteLine("Вы ввели не пятизначное число");
     return result;
