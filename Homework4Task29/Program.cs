@@ -18,7 +18,7 @@ void PrintData(string res, int[] arr)
 
 int[] GenArray(int len)
 {
-    Random rnd = new Random();
+    //Random rnd = new Random();
     int[] arr = new int[len];
     for (int i=0; i <arr.Length;i++)
     {
