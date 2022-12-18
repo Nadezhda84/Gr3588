@@ -67,6 +67,7 @@ int[] GenArray(int len, int minValue, int maxValue)
     return arr;
 }
 
+// метод, подсчитывающий количество четных элементов в массиве
 int CountEven(int[] array)
 {
     int count = 0;
