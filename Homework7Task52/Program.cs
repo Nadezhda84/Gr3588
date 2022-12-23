@@ -1,7 +1,6 @@
 ﻿// Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 // * Дополнительно вывести среднее арифметическое по диагоналям и диагональ выделить разным цветом.
 
-
 //Метод, считывающий данные, введенные пользователем
 int ReadData(string msg)
 {
@@ -39,7 +38,7 @@ void Print2DArrayColor(int[,] matrix)
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
             Console.ForegroundColor = col[new System.Random().Next(0, 16)];
-            Console.Write(" "+matrix[i, j] + "     ".Substring(matrix[i,j].ToString().Length));
+            Console.Write(" "+matrix[i, j] + "      ".Substring(matrix[i,j].ToString().Length));
             Console.ResetColor();                                                   // Устанавливает исходный цвет
         }
         Console.WriteLine();
@@ -57,6 +56,7 @@ void Print1DArr(double[] arr)
     Console.WriteLine(arr[arr.Length - 1] );
 }
 
+// Метод находит среднее арифметическое элементов в каждом столбце 
 double[] AvgElem(int[,] array)
 {
     double[] avgArray = new double[array.GetLength(1)];
@@ -71,11 +71,11 @@ double[] AvgElem(int[,] array)
     return avgArray;
 }
 
-int row = ReadData("Введите количество строк");
-int column = ReadData("Введите количество столбцов");
-int[,] arr2D = Fill2DArray(row, column, 1, 99);
-Print2DArrayColor(arr2D);
-
-Print1DArr(AvgElem(arr2D));
+int row = ReadData("Введите количество строк");                                 // Пользователь вводит количество строк
+int column = ReadData("Введите количество столбцов");                           // Пользователь вводит количество столбцов
+int[,] arr2D = Fill2DArray(row, column, 1, 100);                                // Генерируем массив размером (row, column) с диапазоном значений от 1 до 99
+Print2DArrayColor(arr2D);                                                       // Выводим на печать получившийся массив    
+Console.WriteLine();
+Print1DArr(AvgElem(arr2D));                                                     // Печатаем массив со средними значениями в каждом столбце
 
 
